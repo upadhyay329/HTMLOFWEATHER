@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Current Weather">
+        <div class="slds-m-around_medium">
+            <template if:true={weather}>
+                <p><strong>Location:</strong> {weather.location}</p>
+                <p><strong>Temperature:</strong> {weather.temperature}°C</p>
+                <p><strong>Condition:</strong> {weather.condition}</p>
+                <p><strong>Humidity:</strong> {weather.humidity}%</p>
+                <p><strong>Wind Speed:</strong> {weather.windSpeed} m/s</p>
+                <img src={weather.icon} alt="Weather Icon" />
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
